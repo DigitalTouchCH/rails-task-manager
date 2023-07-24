@@ -1,6 +1,18 @@
-<h1><%= @task.title %></h1>
+<div class = container>
+  <h1><%= @task.title %></h1>
 
-<h2><%= @task.details %></h2>
-<p><%= @task.completed %></p>
+  <p class="alert alert-secondary" role="alert">
+  <%= @task.details %>
+  <% if @task.completed %>
+    (done)
+  <% else %>
+    (work in progress)
+  <% end %>
+  </p>
 
-<%= link_to "Back to list", tasks_path %>
+  <%= link_to tasks_path, class: "btn btn-primary" do %>
+    <i class="fa-solid fa-rotate-left"></i> Back to list
+  <% end %>
+
+  <%= link_to "Edit", edit_task_path(@task), class:"btn btn-primary" %>
+</div>

@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.link-no-decoration {
+  color: inherit;
+  text-decoration: none;
+}
